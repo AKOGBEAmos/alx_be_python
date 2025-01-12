@@ -6,8 +6,8 @@ def perform_operation(num1, num2, operation):
     elif operation == 'multiply':
         return (num1 * num2)
     elif operation == 'divide':
-        try:
+        if num2 == 0:
+            print(f"Sorry you enter 0 as value for the divider that causes the {ZeroDivisionError}")
+        else:   
             return(num1 / num2)
-        #Managing ZeroDivisionError
-        except ZeroDivisionError as e:
-            print(f"Sorry you enter 0 as value for the divider that causes the {e}")
+            
