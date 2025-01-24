@@ -1,6 +1,6 @@
 # Library management module
 class Book:
-    def __init__(self,title, author, is_checked_out=0):
+    def __init__(self,title, author, is_checked_out=False):
         self.title =  title
         self.author = author
         self.__is_checked_out = is_checked_out
@@ -16,7 +16,7 @@ class Book:
     
     def book_checking(self,status):
         """ This method update the availability status of a book """
-        self.__is_checked_out = bool(status)
+        self.__is_checked_out = not status
 
 class Library:
     def __init__(self):
@@ -26,17 +26,17 @@ class Library:
         """ Method to add a new Book to the library """
         self.__books.append(book)
 
-    def check_out_book(self,title):
+    def check_out_book(self,title, status=False):
         #If a book is checked_out we make it unavailable in the library
         for book in self.__books:
             if title == book.title:
-                book.book_checking(1)
+                book.book_checking(status)
         
-    def return_book(self,title):
+    def return_book(self, title, status=True):
         #If a book is returned we make it available again
         for book in self.__books:
             if title == book.title and book.is_checked_out():
-                book.book_checking(0)
+                book.book_checking(status)
 
     def list_available_books(self):
         for book in self.__books:
