@@ -17,6 +17,9 @@ class Book:
     def book_checking(self,status):
         """ This method update the availability status of a book """
         self.__is_checked_out = not status
+    
+    def return_book(self):
+        print(f"{self.get_title()} by {self.get_author()}")
 
 class Library:
     def __init__(self):
@@ -41,4 +44,4 @@ class Library:
     def list_available_books(self):
         for book in self.__books:
             if not book.is_checked_out():  
-                print(f"{book.get_title()} by {book.get_author()}")
+                book.return_book()
