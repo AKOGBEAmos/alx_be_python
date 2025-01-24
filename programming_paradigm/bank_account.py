@@ -7,10 +7,10 @@ current_year = current_date.year
 
 class BankAccount:
     def __init__(self, balance = 0):
-        self.balance = balance
+        self.balance = float(balance)
 
     def display_balance(self):
-        print(f"Current Balance: ${self.balance}")
+        print("Current Balance: ${:.2f}".format(self.balance))
     def deposit(self,amount):
         try:
             self.balance += amount
