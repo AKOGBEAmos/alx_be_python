@@ -2,7 +2,7 @@ import sys
 from bank_account import BankAccount
 
 def main():
-    account = BankAccount("012546", "savings", 100)  # Example starting balance
+    account = BankAccount(100)  # Example starting balance
     if len(sys.argv) < 2:
         print("Usage: python main.py <command>:<amount>")
         print("Commands: deposit, withdraw, display, banking_receipt, prediction")
@@ -21,8 +21,8 @@ def main():
             print("Insufficient funds.")
     elif command == "display":
         account.display_balance()
-    elif command == "banking_receipt":
-        account.banking_receipt()
+    # elif command == "banking_receipt":
+    #     account.banking_receipt()
     elif command == "prediction":
         interest = float(input("Give the initial interest of your savings: "))
         year = int(input("Give the year the prediction is for: "))

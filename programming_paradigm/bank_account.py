@@ -6,10 +6,8 @@ current_date =  datetime.now()
 current_year = current_date.year
 
 class BankAccount:
-    def __init__(self, account_id, account_type, balance = 0):
-        self.account_id = account_id
+    def __init__(self, balance = 0):
         self.balance = balance
-        self.type = account_type
 
     def display_balance(self):
         print(f"Current Balance: ${self.balance}")
@@ -25,12 +23,12 @@ class BankAccount:
             return True
         else:
             return False
-
-    def banking_receipt(self):
-        print(f"The account number is: {self.account_id}")
-        print(f"{self.type} account")
-        display_banner()
-        print(f"You account balance is: ${self.balance} ")
+    #To be added in new version
+    # def banking_receipt(self):
+    #     print(f"The account number is: {self.account_id}")
+    #     print(f"{self.type} account")
+    #     display_banner()
+    #     print(f"You account balance is: ${self.balance} ")
     # Custom function to estimate bank account balance with a certain interest in the future
     
     def account_prediction(self, interest, year):
