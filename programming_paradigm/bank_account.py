@@ -6,7 +6,7 @@ current_date =  datetime.now()
 current_year = current_date.year
 
 class BankAccount:
-    def __init__(self, account_id, balance = 0, account_type):
+    def __init__(self, account_id, account_type, balance = 0):
         self.account_id = account_id
         self.balance = balance
         self.type = account_type
