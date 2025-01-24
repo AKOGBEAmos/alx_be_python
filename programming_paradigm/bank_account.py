@@ -6,13 +6,13 @@ current_date =  datetime.now()
 current_year = current_date.year
 
 class BankAccount:
-    def __init__(self, account_id, balance, account_type):
+    def __init__(self, account_id, balance = 0, account_type):
         self.account_id = account_id
         self.balance = balance
         self.type = account_type
 
     def display_balance(self):
-        print(f"Current balance: ${self.balance}")
+        print(f"Current Balance: ${self.balance}")
     def deposit(self,amount):
         try:
             self.balance += amount
