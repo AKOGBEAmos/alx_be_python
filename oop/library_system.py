@@ -8,24 +8,23 @@ class Book:
     def __str__(self):
         return f"Book: {self.title} by {self.author}"
 
-
 """ Ebook class inherits from  Book """
 class EBook(Book):
     def __init__(self, title, author, file_size):
         super().__init__(title, author)
-        self.size = file_size
+        self.file_size = file_size
     
     def __str__(self):
-        return f"EBook: {self.title} by {self.author}, File Size: {self.size}KB"
+        return f"EBook: {self.title} by {self.author}, File Size: {self.file_size}KB"
 
 """ PrintBook inherits from Book """
 class PrintBook(Book):
     def __init__(self, title, author, page_count):
         super().__init__(title, author)
-        self.page = page_count 
+        self.page_count = page_count 
     
     def __str__(self):
-        return f"PrintBook: {self.title} by {self.author}, Page Count: {self.page}"
+        return f"PrintBook: {self.title} by {self.author}, Page Count: {self.page_count}"
     
 """ Library is a class that stores all the three categories of books """
 class Library:
